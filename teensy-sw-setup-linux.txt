@@ -1,0 +1,17 @@
+﻿Using Teensy boot loader on kali linux
+Simple steps to resolve issue of error message:
+“Teensy did not respond to a USB-based request to enter program mode.”
+
+1. Copy 00-teensy.rules from: https://www.pjrc.com/teensy/00-teensy.rules
+2. save it as  00-teensy.rules inside /lib/udev/rules.d
+3. download already compiled .hex files of LED blink, slow & fast from: https://www.pjrc.com/teensy/blink_both.zip
+4. Download teensy program (64 bit) for debian x64 from : https://www.pjrc.com/teensy/teensy_linux64.tar.gz
+
+5. Unzip teensy program and run teensy from gui
+
+6. Open HEX file and upload any .hex file from the blink_both folder (Must upload the suitable file compiled for your teensy version e.g blink_slow_teensy35.hex for teensy 3.5)
+7. Select "Program" from the "Operations" menu, or click the Program button on the tool bar. The download should be very quick, perhaps too fast to see a tiny progress bar appear, but you should see the "Download Complete" message.
+
+8. Choose "Reboot" from the "Operations" menu, or click the Reboot button on the tool bar. Your Teensy board should immediately begin running the fast LED blink program.
+
+Finally you can now build and upload your own projects on teensy from vsCode, Arduino etc. on linux distribution.
